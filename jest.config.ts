@@ -6,6 +6,7 @@ const config: Config.InitialOptions = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
+  setupFiles: ['<rootDir>/tests/setup/env.ts'],
   testTimeout: 30000,
 };
 export default config;
