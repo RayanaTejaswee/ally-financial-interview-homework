@@ -5,6 +5,7 @@
     "predev": "mesh build",
     "dev": "ts-node src/server.ts",
     "lint": "eslint . --ext .ts",
+    "pretest": "mesh build",
     "test": "DISABLE_DYNAMO=true npx jest --config=./jest.config.ts  --watchAll=false --ci"
   },
   "dependencies": {
