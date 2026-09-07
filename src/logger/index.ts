@@ -13,6 +13,7 @@ export class Logger {
 
   setRequestId(requestId: string) {
     this.requestId = requestId;
+    this.winston.defaultMeta = { ...this.winston.defaultMeta, requestId };
   }
 
   info(message: string, meta?: object) {
