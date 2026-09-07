@@ -1,6 +1,6 @@
 import { parse } from 'graphql';
 import { executor } from '../exectuor';
-import { resetAddresses, readAddressesFile, SEED_ADDRESSES } from '../setup/env';
+import { resetAddresses, readAddressesFile, TEST_ADDRESSES } from '../setup/env';
 
 const CREATE = parse(`
   mutation CreateAddress($username: String!, $address: AddressInput!) {
@@ -38,8 +38,8 @@ describe('createAddress mutation (Ticket 2)', () => {
     await executor({ document: CREATE, variables: { username: 'nora', address } });
 
     const onDisk = readAddressesFile();
-    expect(onDisk.jack).toEqual(SEED_ADDRESSES.jack);
-    expect(onDisk.jill).toEqual(SEED_ADDRESSES.jill);
+    expect(onDisk.jack).toEqual(TEST_ADDRESSES.jack);
+    expect(onDisk.jill).toEqual(TEST_ADDRESSES.jill);
   });
 
   test('rejects a create for a username that already exists', async () => {
@@ -49,6 +49,6 @@ describe('createAddress mutation (Ticket 2)', () => {
     });
 
     expect(result.errors?.[0].message).toBe('An address already exists for that user');
-    expect(readAddressesFile().jack).toEqual(SEED_ADDRESSES.jack);
+    expect(readAddressesFile().jack).toEqual(TEST_ADDRESSES.jack);
   });
 });

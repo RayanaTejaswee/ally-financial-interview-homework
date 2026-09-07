@@ -2,6 +2,7 @@
   "name": "interview_homework",
   "version": "1.0.0",
   "scripts": {
+    "predev": "mesh build",
     "dev": "ts-node src/server.ts",
     "lint": "eslint . --ext .ts",
     "test": "DISABLE_DYNAMO=true npx jest --config=./jest.config.ts  --watchAll=false --ci"
@@ -11,6 +12,9 @@
     "@envelop/parser-cache": "^9.0.0",
     "@envelop/response-cache": "^8.0.0",
     "@envelop/validation-cache": "^9.0.0",
+    "@graphql-mesh/cli": "^0.103.2",
+    "@graphql-mesh/json-schema": "^0.112.4",
+    "@graphql-mesh/transform-cache": "^0.108.1",
     "@graphql-tools/executor-http": "^1.1.6",
     "@graphql-tools/load-files": "^7.0.1",
     "@graphql-tools/merge": "^9.0.24",
@@ -27,10 +31,10 @@
     "@typescript-eslint/eslint-plugin": "8.41.0",
     "@typescript-eslint/parser": "8.41.0",
     "eslint": "8.57.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
     "jest": "^30.2.0",
-    "ts-jest": "^29.4.5"
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "keywords": [],
   "author": "",
