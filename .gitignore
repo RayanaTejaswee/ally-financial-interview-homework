@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# logs
+*.log
+npm-debug.log*
+
+# env / secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+
+# editor
+.vscode/
+.idea/
+
+# test / coverage
+coverage/
+
+# GraphQL Mesh (Sprint 2) generated output
+.mesh/
