@@ -3,6 +3,7 @@ import winston from 'winston';
 export class Logger {
   private winston: any;
   requestId: string = '';
+  client: string = '';
   constructor() {
     this.winston = winston.createLogger({
       level: 'info',
@@ -14,6 +15,11 @@ export class Logger {
   setRequestId(requestId: string) {
     this.requestId = requestId;
     this.winston.defaultMeta = { ...this.winston.defaultMeta, requestId };
+  }
+
+  setClient(client: string) {
+    this.client = client;
+    this.winston.defaultMeta = { ...this.winston.defaultMeta, client };
   }
 
   info(message: string, meta?: object) {
